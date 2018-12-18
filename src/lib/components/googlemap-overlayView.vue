@@ -1,8 +1,8 @@
 <template>
   
 </template>
-<script type="text/javascript" src="./infobox.js"></script>
 <script>
+const InfoBox = require('./infobox.js')
 const DEFAULT_EVENTS = [
   'click',
   'rightclick',
@@ -43,7 +43,7 @@ export default {
     },
     boxStyle: {
       default: null,
-      type: [Object, Array]
+      type: Object
     },
     closeBoxMargin: {
       default: "10px 2px 2px 2px",
