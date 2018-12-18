@@ -17,7 +17,7 @@ const DEFAULT_EVENTS = [
   'mouseout'
 ]
 export default {
-  name: "vue-googlemap-overlay-view",
+  name: "vue-googlemap-overlayView",
   data() {
     return {};
   },

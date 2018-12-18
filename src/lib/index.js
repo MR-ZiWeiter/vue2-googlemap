@@ -6,6 +6,7 @@ import polygon from './components/googlemap-polygon.vue';
 import circle from './components/googlemap-circle.vue';
 import rectangle from './components/googlemap-rectangle.vue';
 import infoWindow from './components/googlemap-infoWindow.vue';
+import overlayView from './components/googlemap-overlayView.vue';
 
 const components = [
   googlemap,
@@ -14,7 +15,8 @@ const components = [
   polygon,
   circle,
   rectangle,
-  infoWindow
+  infoWindow,
+  overlayView
 ];
 
 const vueGoogleMap = {

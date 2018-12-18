@@ -6,7 +6,7 @@
                                     :content='content'
                                     :events="events"
                                     ref='window'></vue-googlemap-infoWindow>
-        </vue-googlemap>     
+        </vue-googlemap>
         <button @click='open'></button>                       
       </div>
 </template>
