@@ -93,7 +93,7 @@ export default {
     content: {
       handler (_content, __old) {
         if (_content !== null && _content !== '') {
-          console.log(_content)
+          // console.log(_content)
           this.$infoBox.setContent(_content)
         }
       },
