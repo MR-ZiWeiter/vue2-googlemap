@@ -1,9 +1,8 @@
 <template>
   
 </template>
-
+<script type="text/javascript" src="./infobox.js"></script>
 <script>
-import './infobox.js'
 const DEFAULT_EVENTS = [
   'click',
   'rightclick',
