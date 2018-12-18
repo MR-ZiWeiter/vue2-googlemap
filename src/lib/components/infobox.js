@@ -74,7 +74,7 @@
  * @constructor
  * @param {InfoBoxOptions} [opt_opts]
  */
-function InfoBox(opt_opts) {
+let InfoBox = function (opt_opts) {
 
   opt_opts = opt_opts || {};
 
@@ -815,3 +815,4 @@ InfoBox.prototype.close = function () {
 
   this.setMap(null);
 };
+export default InfoBox;

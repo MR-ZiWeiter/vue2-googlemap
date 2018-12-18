@@ -4,6 +4,7 @@
 
 <script>
 const DEFAULT_EVENTS = [
+  'load',
   'click',
   'rightclick',
   'dblclick',
@@ -121,6 +122,7 @@ export default {
           this.$marker[`set${k.charAt(0).toUpperCase() + k.slice(1)}`](nv);
         });
       });
+      this.$emit(`markLoad`, this.markerInfo, this.$marker);
       this.registerEvents();
     },
     registerEvents() {
@@ -129,7 +131,7 @@ export default {
       if (!events) return;
       events.map(eventName => {
         if (eventName) _this.$marker.addListener(eventName, function () {
-          _this.$emit(`mark${eventName.charAt(0).toUpperCase() + eventName.slice(1)}`, _this.markerInfo);
+          _this.$emit(`mark${eventName.charAt(0).toUpperCase() + eventName.slice(1)}`, _this.markerInfo, _this.$marker);
         });
       })
     }
