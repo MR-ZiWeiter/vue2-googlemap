@@ -59,22 +59,21 @@ export default {
     mapOptions: Object
   },
   watch: {
-    center: {
-      handler (_new, _old) {
-        if (_new !== _old) {
-          if (this.$map === undefined) return
-          console.log('112345')
-          this.$map.setCenter(
-            Array.isArray(nv) ? { lat: nv[0], lng: nv[1] } : nv
-          );
-          this.$map.panTo(
-            Array.isArray(nv) ? { lat: nv[0], lng: nv[1] } : nv
-          );
-        }
-      },
-      deep: true,
-      immediate: true
-    }
+    // center: {
+    //   handler (_new, _old) {
+    //     if (_new !== _old) {
+    //       if (this.$map === undefined) return
+    //       this.$map.setCenter(
+    //         Array.isArray(nv) ? { lat: nv[0], lng: nv[1] } : nv
+    //       );
+    //       this.$map.panTo(
+    //         Array.isArray(nv) ? { lat: nv[0], lng: nv[1] } : nv
+    //       );
+    //     }
+    //   },
+    //   deep: true,
+    //   immediate: true
+    // }
   },
   mounted() {
     this.createMap();
@@ -128,10 +127,10 @@ export default {
           this.$map.setZoom(nv);
         });
         this.$watch("center", nv => {
-          this.$map.setCenter(
+          this.$map.panTo(
             Array.isArray(nv) ? { lat: nv[0], lng: nv[1] } : nv
           );
-          this.$map.panTo(
+          this.$map.setCenter(
             Array.isArray(nv) ? { lat: nv[0], lng: nv[1] } : nv
           );
         });
@@ -140,6 +139,8 @@ export default {
     },
     setCenter (op) {
       this.$map.setCenter(op)
+    },
+    setPanCenter (op) {
       this.$map.panTo(op)
     },
     getZoom () {

@@ -47,6 +47,7 @@ export default {
     },
     zIndex: Number,
     events: Object,
+    markRandom: Number,
     markerList: [Array, Object],
     markerInfo: Object
   },
@@ -62,10 +63,13 @@ export default {
     }
   },
   watch: {
-    markerList: {
+    markRandom: {
       handler (_new, _old) {
         this.reset();
-      }
+        // this.createMarker();
+      },
+      deep: true,
+      immediate: true
     }
   },
   destroyed() {
@@ -130,8 +134,8 @@ export default {
       const _this = this;
       if (!events) return;
       events.map(eventName => {
-        if (eventName) _this.$marker.addListener(eventName, function () {
-          _this.$emit(`mark${eventName.charAt(0).toUpperCase() + eventName.slice(1)}`, _this.markerInfo, _this.$marker);
+        if (eventName) _this.$marker.addListener(eventName, function (e) {
+          _this.$emit(`mark${eventName.charAt(0).toUpperCase() + eventName.slice(1)}`, _this.markerInfo, _this.$marker, e);
         });
       })
     }

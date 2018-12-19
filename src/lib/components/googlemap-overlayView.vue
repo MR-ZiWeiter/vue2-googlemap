@@ -379,7 +379,7 @@ export default {
       this.InfoBox.prototype.addClickHandler_ = function () {
 
         var closeBox;
-
+        var self = this;
         if (this.closeBoxURL_ !== "") {
 
           closeBox = this.div_.firstChild;
@@ -417,6 +417,9 @@ export default {
           google.maps.event.trigger(me, "closeclick");
 
           me.close();
+
+          // 添加回调
+          _this.$emit('closeClickChange', true);
         };
       };
 
@@ -934,7 +937,7 @@ export default {
         content: this.content
         ,disableAutoPan: false
         ,maxWidth: 250
-        ,pixelOffset: new google.maps.Size(-140, 0)
+        ,pixelOffset: new google.maps.Size(0, 0)
         ,zIndex: null
         ,boxStyle: {
           background: "url('tipbox.gif') no-repeat"
