@@ -476,13 +476,19 @@ export default {
                 yOffset = pixPosition.y + iwHeight + iwOffsetY + padY - mapHeight;
               }
             }
-
+            // console.log(this)
             if (!(xOffset === 0 && yOffset === 0)) {
 
               // Move the map to the shifted center.
               //
               var c = map.getCenter();
-              map.panBy(xOffset, yOffset);
+              // console.log('********** 开始 **********')
+              // console.log(this)
+              // console.log(c.lat(), c.lng())
+              // console.log(this.position_.lat(), this.position_.lng())
+              // console.log(xOffset, yOffset)
+              map.panTo(this.position_);
+              // map.panBy(xOffset, yOffset);
             }
           }
         }
