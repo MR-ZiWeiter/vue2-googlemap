@@ -56,7 +56,8 @@ export default {
       ]
     },
     events: Object,
-    mapOptions: Object
+    mapOptions: Object,
+    restriction: Object
   },
   watch: {
     // center: {
